@@ -13,3 +13,6 @@ List the files and aditional details
 
 ## ls -la
 List the files detailed including the hidden files
+
+## ls -lan
+List the files detailed including the hidden files and numerical formal
