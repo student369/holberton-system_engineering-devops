@@ -8,5 +8,5 @@ Show you a list of your files in the actual directory
 ## cd ~
 Change your actual directory to the home
 
-## ls -l -a
-List the files but with a litle aditional details
+## ls -l
+List the files and aditional details
