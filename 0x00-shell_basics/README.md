@@ -18,4 +18,7 @@ List the files detailed including the hidden files.
 List the files detailed including the hidden files and numerical formal.
 
 ## mkdir /tmp/holberton
-Commant to create a directory called holberton in a tmp directory.
+Command to create a directory called holberton in a tmp directory.
+
+## mv /tmp/betty /tmp/holberton
+Command to move a betty file to the holberton directory
