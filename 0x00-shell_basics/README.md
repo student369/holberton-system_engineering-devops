@@ -25,3 +25,6 @@ Command to move a betty file to the holberton directory
 
 ## rm /tmp/holberton/betty
 Remove the file betty from the holberton directory
+
+## rm -R /tmp/holberton
+Command to remove the holberton directory
