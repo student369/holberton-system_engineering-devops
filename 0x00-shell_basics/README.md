@@ -22,3 +22,6 @@ Command to create a directory called holberton in a tmp directory.
 
 ## mv /tmp/betty /tmp/holberton
 Command to move a betty file to the holberton directory
+
+## rm /tmp/holberton/betty
+Remove the file betty from the holberton directory
