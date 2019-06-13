@@ -15,3 +15,6 @@ This script create a hello empthy file.
 
 ## 5-execute
 This script add an execution permition to the hello file.
+
+## 6-multiple_permissions
+This script puts multiple permitions: execute in the owner and the group and read permitions to others.
