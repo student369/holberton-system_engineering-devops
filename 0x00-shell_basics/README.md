@@ -31,3 +31,6 @@ Command to remove the holberton directory
 
 ## cd -.
 Command to change the actual folder to previous
+
+## ls -la . .. /boot
+Command to show the long and hiddent list from actuall directory, previously and the /boot
