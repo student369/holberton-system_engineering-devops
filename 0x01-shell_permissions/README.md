@@ -12,3 +12,6 @@ This script change the owner hello file to betty.
 
 ## 4-empty
 This script create a hello empthy file.
+
+## 5-execute
+This script add an execution permition to the hello file.
