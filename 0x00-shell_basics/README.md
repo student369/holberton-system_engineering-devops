@@ -29,5 +29,5 @@ Remove the file betty from the holberton directory
 ## rm -R /tmp/holberton
 Command to remove the holberton directory
 
-## cd ..
+## cd -.
 Command to change the actual folder to previous
