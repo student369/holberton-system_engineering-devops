@@ -6,3 +6,6 @@ This command show an ascii smiley
 
 ## 2-hellofile
 Commant to show the /etc/passwd content file
+
+## 3-twofiles
+Comand that show the /etc/passwd and /etc/hosts files
