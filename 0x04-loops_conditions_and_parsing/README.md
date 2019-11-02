@@ -1,4 +1,4 @@
-# Lops, conditions and Parsing
+# Loops, conditions and Parsing
 
 A project to understand the some advanced features of
 the bash operations.
@@ -6,6 +6,7 @@ the bash operations.
 The following project contains this files:
 
 | File | Description |
+| ---- | ----------- |
 | 0-RSA_public_key.pub | A public key |
 | 1-for_holberton_school | A simple script that prints a string |
 | 2-while_holberton_school | A simple script that prints a string |
