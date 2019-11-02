@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+COUNTER=1
+while [$COUNTER -le 10]
+do
+    if [$counter -eq 10]; then
+       echo "Hi"
+    fi
+    echo "Holberton School"
+    ((COUNTER++))
+done
