@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script is displaying the numbers from 1 to 100
 x=1
 while [ $x -le 100 ]
 do
