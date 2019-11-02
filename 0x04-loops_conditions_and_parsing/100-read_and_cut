@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script show some information of /etc/passwd file.
 while read line;
 do
     echo "$line" | cut -d':' -f 1,3,6
