@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 COUNTER=1
-while [$COUNTER -le 20]
+while [ $COUNTER -le 20 ]
 do
     case $COUNTER in
 	4 )
