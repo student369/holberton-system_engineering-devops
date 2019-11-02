@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script is display the number from 1 to 20
 COUNTER=1
 while [ $COUNTER -le 20 ]
 do
