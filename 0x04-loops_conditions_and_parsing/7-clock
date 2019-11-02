@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 hur=0
 min=1
-while [$hur -le 12]
+while [ $hur -le 12 ]
 do
-    echo "Hour: " $hur
-    while [$min -le 59]
+    echo "Hour:" $hur
+    while [ $min -le 59 ]
     do	
 	echo $min
 	((min++))
