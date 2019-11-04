@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-ps --forest axu | grep bash
+# This command show the processes related of the bash
 # shellcheck disable=SC2009
+ps --forest axu | grep bash
