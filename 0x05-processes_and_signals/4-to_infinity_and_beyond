@@ -4,5 +4,6 @@ COUNTER=1
 until [ $COUNTER -eq 0 ]
 do
     echo "To infinity and beyond"
+    sleep 2
     let COUNTER=COUNTER+1
 done
