@@ -1,0 +1,8 @@
+#!/usr/bin/env bash                       
+# This script is displays a text indefinitly
+COUNTER=1
+until [ $COUNTER -eq 0 ]
+do
+    echo "To infinity and beyond"
+    let COUNTER=COUNTER+1
+done
