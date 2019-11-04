@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Show the processes with a nice format.
+ps --forest axu
