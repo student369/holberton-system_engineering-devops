@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # This script manage the manage_my_process process.
+# shellcheck disable=SC2002
 PID_FILE=/var/run/my_process.pid
 case $1 in
     "start" )
@@ -9,12 +10,12 @@ case $1 in
 	;;
     "stop" )
 	echo "manage_my_process stopped"
-	xargs kill < cat $PID_FILE
+	cat $PID_FILE | xargs kill
 	rm $PID_FILE
 	;;
     "restart" )
 	echo "manage_my_process restarted"
-	xargs kill < cat $PID_FILE
+	cat $PID_FILE | xargs kill
 	rm $PID_FILE
 	./manage_my_process &
 	echo $! > $PID_FILE
