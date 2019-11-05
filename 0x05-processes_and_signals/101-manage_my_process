@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 # This script manage the manage_my_process process.
+PID_FILE=/var/run/my_process.pid
 case $1 in
     "start" )
-	echo "manage_my_process started"
-	echo $$ >> /var/run/my_process.pid
-	./manage_my_process
+	echo "manage_my_process started"	
+	./manage_my_process &
+	echo $! > $PID_FILE
 	;;
     "stop" )
 	echo "manage_my_process stopped"
-	pkill -f manage_my_process
-	rm /var/run/my_process.pid
+	xargs kill < cat $PID_FILE
+	rm $PID_FILE
 	;;
     "restart" )
 	echo "manage_my_process restarted"
-        pkill -f manage_my_process
-	rm /var/run/my_process.pid
-	echo $$ >> my_process.pid
-	./manage_my_process	
+	xargs kill < cat $PID_FILE
+	rm $PID_FILE
+	./manage_my_process &
+	echo $! > $PID_FILE
 	;;
     *)
 	echo "Usage: manage_my_process {start|stop|restart}"
