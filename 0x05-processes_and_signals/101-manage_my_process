@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script manage the manage_my_process process.
+case $1 in
+    "start" )
+	echo "manage_my_process started"
+	echo $$ >> /var/run/my_process.pid
+	./manage_my_process
+	;;
+    "stop" )
+	echo "manage_my_process stopped"
+	pkill -f manage_my_process
+	rm /var/run/my_process.pid
+	;;
+    "restart" )
+	echo "manage_my_process restarted"
+        pkill -f manage_my_process
+	rm /var/run/my_process.pid
+	echo $$ >> my_process.pid
+	./manage_my_process	
+	;;
+    *)
+	echo "Usage: manage_my_process {start|stop|restart}"
+	;;
+esac
