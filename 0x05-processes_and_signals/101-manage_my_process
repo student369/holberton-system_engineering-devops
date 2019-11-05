@@ -4,23 +4,34 @@
 PID_FILE=/var/run/my_process.pid
 case $1 in
     "start" )
-	echo "manage_my_process started"	
+	echo "manage_my_process started"
 	./manage_my_process &
 	echo $! > $PID_FILE
 	;;
     "stop" )
 	echo "manage_my_process stopped"
-	cat $PID_FILE | xargs kill
-	rm $PID_FILE
+	if [ -f $PID_FILE ]
+	then
+	    cat $PID_FILE | xargs kill
+	    rm $PID_FILE
+	else
+	    pkill -f manage_my_process
+	fi	
 	;;
     "restart" )
-	echo "manage_my_process restarted"
-	cat $PID_FILE | xargs kill
-	rm $PID_FILE
+	echo "manage_my_process restarted"	
+	if [ -f $PID_FILE ]
+	then
+	    cat $PID_FILE | xargs kill
+	    rm $PID_FILE
+	else
+	    pkill -f manage_my_process
+	fi	
 	./manage_my_process &
 	echo $! > $PID_FILE
 	;;
     *)
 	echo "Usage: manage_my_process {start|stop|restart}"
+	exit 2
 	;;
 esac
