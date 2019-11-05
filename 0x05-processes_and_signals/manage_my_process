@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script updates the content of indidinetly.
+COUNTER=1
+until [ $COUNTER -eq 0 ]
+do    
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2
+    let COUNTER=COUNTER+1
+done
