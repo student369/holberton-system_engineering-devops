@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # This script manage the manage_my_process process.
-PID_FILE=/var/run/my_process.pid
-PROC_FILE=/tmp/my_process
+PID_FILE=my_process.pid
 if [ "$#" -ne 1 ]; then
     echo "Usage: manage_my_process {start|stop|restart}"
 elif [ "$1" == "start" ]; then
@@ -11,12 +10,10 @@ elif [ "$1" == "start" ]; then
 elif [ "$1" == "stop" ]; then
     pkill -SIGTERM -f "./manage_my_process"
     rm $PID_FILE
-    rm $PROC_FILE
     echo "manage_my_process stopped"
 elif [ "$1" == "restart" ]; then
     pkill -SIGTERM -f "./manage_my_process"
     rm $PID_FILE
-    rm $PROC_FILE
     ./manage_my_process &
     echo "$!" > $PID_FILE
     echo "manage_my_process restarted"
