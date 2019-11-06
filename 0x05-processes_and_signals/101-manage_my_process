@@ -6,7 +6,7 @@ if [ "$#" -ne 1 ]; then
     echo "Usage: manage_my_process {start|stop|restart}"
 elif [ "$1" == "start" ]; then
     ./manage_my_process &
-    echo $! >> $PID_FILE
+    echo "$!" > $PID_FILE
     echo "manage_my_process started"
 elif [ "$1" == "stop" ]; then
     pkill -SIGTERM -f "./manage_my_process"
@@ -18,7 +18,7 @@ elif [ "$1" == "restart" ]; then
     rm $PID_FILE
     rm $PROC_FILE
     ./manage_my_process &
-    echo $! >> $PID_FILE
+    echo "$!" > $PID_FILE
     echo "manage_my_process restarted"
 else
     echo "Usage: manage_my_process {start|stop|restart}"
