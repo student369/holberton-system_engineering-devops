@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script manage the manage_my_process process.
-PID_FILE=my_process.pid
+PID_FILE=/var/run/my_process.pid
 if [ "$#" -ne 1 ]; then
     echo "Usage: manage_my_process {start|stop|restart}"
 elif [ "$1" == "start" ]; then
