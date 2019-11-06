@@ -17,7 +17,7 @@ int infinite_while(void)
 	return (0);
 }
 /**
- * main - PID
+ * main - A program that run some zombie procesess.
  *
  * Return: Alrays 0.
  */
