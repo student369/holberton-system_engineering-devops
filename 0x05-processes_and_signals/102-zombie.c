@@ -23,9 +23,9 @@ int infinite_while(void)
  */
 int main(void)
 {
-	int pids, i;
+	int pid, z;
 
-	for (i = 4; i >= 0; --i)
+	for (z = 4; z >= 0; --z)
 	{
 		pid = fork();
 		if (pids != 0)
