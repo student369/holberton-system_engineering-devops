@@ -1,37 +1,25 @@
 #!/usr/bin/env bash
 # This script manage the manage_my_process process.
-# shellcheck disable=SC2002
 PID_FILE=/var/run/my_process.pid
-case $1 in
-    "start" )
-	echo "manage_my_process started"
-	./manage_my_process &
-	echo $! > $PID_FILE
-	;;
-    "stop" )
-	echo "manage_my_process stopped"
-	if [ -f $PID_FILE ]
-	then
-	    cat $PID_FILE | xargs kill
-	    rm $PID_FILE
-	else
-	    pkill -f manage_my_process
-	fi	
-	;;
-    "restart" )
-	echo "manage_my_process restarted"	
-	if [ -f $PID_FILE ]
-	then
-	    cat $PID_FILE | xargs kill
-	    rm $PID_FILE
-	else
-	    pkill -f manage_my_process
-	fi	
-	./manage_my_process &
-	echo $! > $PID_FILE
-	;;
-    *)
-	echo "Usage: manage_my_process {start|stop|restart}"
-	exit 2
-	;;
-esac
+PROC_FILE=/tmp/my_process
+if [ $1 == "start" ]
+then
+    ./manage_my_process &
+    echo $! > $PID_FILE
+    echo "manage_my_process started"
+elif [ $1 == "stop" ]
+then
+    pkill -SIGTERM -f manage_my_process
+    rm $PID_FILE
+    rm $PROC_FILE
+    echo "manage_my_process stopped"
+elif
+    pkill -SIGTERM -f manage_my_process
+    rm $PID_FILE
+    rm $PROC_FILE
+    ./manage_my_process &
+    echo $! > $PID_FILE
+    echo "manage_my_process restarted"
+else
+    echo "Usage: manage_my_process {start|stop|restart}"
+fi
