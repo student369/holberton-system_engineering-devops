@@ -1,0 +1,8 @@
+#!/bin/bash
+# This script have a infinite loop
+while [ 1 -ne 0 ]
+do
+    trap " echo this process can to finish " SIGTERM
+    echo "This is an inifinite loop"
+    sleep 3
+done
