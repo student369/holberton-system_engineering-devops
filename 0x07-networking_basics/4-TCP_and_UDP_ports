@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script show you the actual programs that is listening in your network
+netstat --program -l
