@@ -7,5 +7,3 @@ sed -i 's/^hocalhost*/localhost 127.0.0.2/g' ~/hosts.new;
 sed -i 's/^facebook.com*/facebook.com 8.8.8.8/g' ~/hosts.new;
 cp -f ~/hosts.new /etc/hosts;
 rm -f ~/hosts.new;
-ifconfig eth0 down;
-ifconfig eth0 up;
