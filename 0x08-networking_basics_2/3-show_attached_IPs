@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script show the ips v4 actual
+netstat -4 -tn | cat | tail -n +3 | awk '{print $5}'

@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # This script change a host configuration in a Ubuntu server.
 cp /etc/hosts  ~/hosts.new;
-echo "hocalhost" >> ~/hosts.new;
-echo "facebook.com" >> ~/hosts.new;
-sed -i 's/^hocalhost*/localhost 127.0.0.2/g' ~/hosts.new;
-sed -i 's/^facebook.com*/facebook.com 8.8.8.8/g' ~/hosts.new;
+echo "localhost\t\t\t127.0.0.2" >> ~/hosts.new;
+echo "facebook.com\t\t\t8.8.8.8" >> ~/hosts.new;
 cp -f ~/hosts.new /etc/hosts;
 rm -f ~/hosts.new;
