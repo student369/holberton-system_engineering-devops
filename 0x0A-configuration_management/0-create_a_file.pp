@@ -1,3 +1,4 @@
+# A Puppet script to create a file
 file { '/tmp/holberton':
   mode    => '0744',
   owner   => 'www-data',
