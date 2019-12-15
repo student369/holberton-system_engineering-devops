@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Script to install a nginx server and show a string
-sudo apt-get update
-sudo apt-get -y install nginx
-echo "Holberton School for the win!" | sudo tee /usr/share/nginx/html/index.html
-sudo service nginx restart
+sudo apt-get update;
+sudo apt-get -y install nginx;
+echo "Holberton School for the win!" | sudo tee /usr/share/nginx/html/index.html;
+sudo service nginx restart;
