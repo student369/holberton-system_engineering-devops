@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # Script to install a nginx server and show a string if is a 404 error
-sudo apt-get update
-sudo apt-get -y install nginx
-echo "Holberton School for the win!" | sudo tee /usr/share/nginx/html/index.html
+sudo apt-get update;
+sudo apt-get -y install nginx;
+sudo service nginx start;
+echo "Holberton School for the win!" | sudo tee /usr/share/nginx/html/index.html;
 sudo sed -i "/# Only for*/i\\
      location /redirect_me {\n\
      rewrite \^(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4\
      permanent;\n}\n\
-     error_page 404 \/404.html;\n" /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
-sudo service nginx restart
+     error_page 404 \/404.html;\n" /etc/nginx/sites-available/default;
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html;
+sudo service nginx reload;
+sudo service nginx restart;
