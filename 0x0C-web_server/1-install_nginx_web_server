@@ -2,5 +2,6 @@
 # Script to install a nginx server and show a string
 sudo apt-get update;
 sudo apt-get -y install nginx;
-echo "Holberton School for the win!" | sudo tee /usr/share/nginx/html/index.html;
+echo "<marquee>Holberton School</marquee>" | sudo tee /usr/share/nginx/html/index.html;
+echo "<marquee>Holberton School</marquee>" | sudo tee /var/www/html/index.nginx-debian.html;
 sudo service nginx restart;
