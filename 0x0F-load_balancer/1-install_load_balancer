@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Install the HAProxy LB
+sudo apt-get update
+sudo apt-get -y install haproxy
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+echo "
+frontend localserv
+	 bind *:80
+	 mode http
+	 default_backend webservs
+
+backend webservs
+	mode http
+	balance roundrobin
+	server 953-web-01 35.229.67.166:80
+	server 953-web-02 35.196.11.70:80
+" | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
