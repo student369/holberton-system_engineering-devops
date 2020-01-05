@@ -2,4 +2,4 @@
 # Script to fix the port problem in the server and the web
 sudo sed -i 's/listen 8080 default_server/listen 80 default_server/g' /etc/nginx/sites-enabled/default
 sudo sed -i 's/listen \[::\]:8080/listen \[::\]:80/g' /etc/nginx/sites-enabled/default
-sudo nginx -s reload
+sudo service nginx restart
