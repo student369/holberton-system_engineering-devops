@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Script to look the DNS zone of a domain
+lookdns()
+{
+    SD="www"
+    PRE="The subdomain"
+    POS="is a A record and points to"
+    LB="lb-01"
+    WS1="web-01"
+    WS2="web-02"
+    IP="$(dig "$SD.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
+    echo "$PRE $SD $POS $IP"
+    IP="$(dig "$LB.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
+    echo "$PRE $LB $POS $IP"
+    IP="$(dig "$WS1.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
+    echo "$PRE $WS1 $POS $IP"
+    IP="$(dig "$WS2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
+    echo "$PRE $WS2 $POS $IP"    
+}
+lookdns "$1"
