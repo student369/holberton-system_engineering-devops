@@ -8,6 +8,12 @@ lookdns()
     LB="lb-01"
     WS1="web-01"
     WS2="web-02"
+    if [ ! -z "$2" ]
+    then
+	IP="$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
+	echo "$PRE $2 $POS $IP"
+	exit 0
+    fi
     IP="$(dig "$SD.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
     echo "$PRE $SD $POS $IP"
     IP="$(dig "$LB.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
@@ -17,4 +23,4 @@ lookdns()
     IP="$(dig "$WS2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
     echo "$PRE $WS2 $POS $IP"    
 }
-lookdns "$1"
+lookdns "$1" "$2"
