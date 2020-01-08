@@ -21,6 +21,7 @@ lookdns()
     IP="$(dig "$WS1.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
     echo "$PRE $WS1 $POS $IP"
     IP="$(dig "$WS2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
-    echo "$PRE $WS2 $POS $IP"    
+    echo "$PRE $WS2 $POS $IP"
+    exit 0
 }
 lookdns "$1" "$2"
