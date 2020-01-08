@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Execute a command like other user
+wh()
+{
+    if [ ! -z "$1" ]
+    then
+	sudo -u "$1" whoami
+	exit 0
+    fi
+}
+wh "$1"
